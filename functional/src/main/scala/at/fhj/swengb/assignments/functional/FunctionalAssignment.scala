@@ -84,8 +84,18 @@ object FunctionalAssignment {
     * Implementation hint: you always have to compare two consecutive elements of the array.
     * Elements which are equal are considered to be ordered.
     */
-  def isSorted[A](as: Array[A], gt: (A, A) => Boolean): Boolean = ???
-  //AND (for ( x <- as.grouped(2)) yield x.map(gt))
+  def isSorted[A](as: Array[A], gt: (A, A) => Boolean): Boolean = {
+    if (as.length == (0 | 1)) false //Function does not work on this Array
+    else {
+      def sortHelperFunc(x: Int): Boolean = {
+        if (x >= as.length - 1) true
+        else if (gt(as(x), as(x+1)))
+          sortHelperFunc(x + 1)
+        else false
+      }
+      sortHelperFunc(0)
+    }
+  }
 
   /**
     * Takes both lists and combines them, element per element.
