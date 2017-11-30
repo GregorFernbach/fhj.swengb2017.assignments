@@ -39,7 +39,20 @@ object Graph {
     * @param convert a converter function
     * @return
     */
-  def traverse[A, B](tree: Tree[A])(convert: A => B): Seq[B] =  ???
+  def traverse[A, B](tree: Tree[A])(convert: A => B): Seq[B] =  {
+
+    //Helper to add all elements to list
+    def addElemToList(elem: Tree[A], list: Seq[A]): Seq[A] = {
+      elem match {
+        case Node(x) => list.seq :+ x
+        case Branch(left, right) =>
+          addElemToList(right, addElemToList(left, list))
+      }
+    }
+
+    //Add all nodes to list and map operation
+    addElemToList(tree, List()).map(convert)
+  }
 
 
   /**
@@ -61,7 +74,66 @@ object Graph {
               treeDepth: Int,
               factor: Double = 0.75,
               angle: Double = 45.0,
-              colorMap: Map[Int, Color] = Graph.colorMap): Tree[L2D] = ???
+              colorMap: Map[Int, Color] = Graph.colorMap): Tree[L2D] = {
+
+    require(treeDepth >= 0 && treeDepth <= (colorMap.size - 1))
+
+    def createSubTree(leaf: Node[L2D],
+                      factor: Double,
+                      angle: Double,
+                      color: Color): Branch[L2D] = {
+
+      val nodeLeft = Node(leaf.value.left(factor, angle, color))
+      val nodeRight = Node(leaf.value.right(factor, angle, color))
+
+      Branch(leaf, Branch(nodeLeft, nodeRight))
+    }
+
+
+    def createTree(currTree: Tree[L2D],
+                   depth: Int,
+                   maxDepth: Int): Tree[L2D] = {
+      if (depth == maxDepth)
+
+        currTree
+      else {
+
+        def addNewLevel(tree: Tree[L2D], currLevel: Int): Branch[L2D] = {
+          tree match {
+            case Node(root) =>
+
+              createSubTree(Node(root), factor, angle, colorMap(currLevel))
+            case Branch(Node(root), Branch(Node(left), Node(right))) =>
+
+              val newSubtreeLeft =
+                createSubTree(Node(left), factor, angle, colorMap(currLevel))
+              val newSubtreeRight =
+                createSubTree(Node(right), factor, angle, colorMap(currLevel))
+              Branch(Node(root), Branch(newSubtreeLeft, newSubtreeRight))
+            case Branch(Node(root), Branch(left, right)) =>
+
+              Branch(Node(root),
+                Branch(addNewLevel(left, depth + 1),
+                  addNewLevel(right, depth + 1)))
+            case Branch(_, _) => ???
+          }
+        }
+
+
+        createTree(addNewLevel(currTree, depth), depth + 1, maxDepth)
+      }
+    }
+
+
+    val rootNode: Tree[L2D] = Node(
+      L2D(start, initialAngle, length, colorMap(0)))
+
+    //Append tree according given depth
+    treeDepth match {
+      case 0 => rootNode
+      case _ => createTree(rootNode, 0, treeDepth)
+    }
+  }
 
 }
 
