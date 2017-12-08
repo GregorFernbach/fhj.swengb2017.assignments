@@ -1,5 +1,7 @@
 package at.fhj.swengb.apps.calculator
 
+import java.util.NoSuchElementException
+
 import scala.util.Try
 
 /**
@@ -14,91 +16,87 @@ object RpnCalculator {
     * @param s a string representing a calculation, for example '1 2 +'
     * @return
     */
-  def apply(s: String): Try[RpnCalculator] = ??? /*{
-
-    if (s.isEmpty) //wenn der string leer is, hau einen leeren Stack zurück
-      Try(RpnCalculator())
-
-    else { // der Stack ist eine Liste aus Op
-
+  def apply(s: String): Try[RpnCalculator] =
+    if (!s.isEmpty) { // der Stack ist eine Liste aus Op
       //def derCalculator(a:List[Op]) = a.map(e => Try(RpnCalculator(RpnCalculator.push(e))))
-
       val derStack: List[Op] = s.split(' ').map(elem => Op(elem)).toList
-
       //def derCalc = derStack.map(b =>derCalculator)
-/*
- Splitte den String an den Leerzeichen => List[String], mappe darauf eine Funktion, die schaut
- ob das element ein Op ist und anschließend in eine Liste verwandelt
- */
+      /*
+       Splitte den String an den Leerzeichen => List[String], mappe darauf eine Funktion, die schaut
+       ob das element ein Op ist und anschließend in eine Liste verwandelt
+      */
       var derCalculator: Try[RpnCalculator] = Try(RpnCalculator())
-
-      for (element <- derStack) {
-        derCalculator = derCalculator.get.push(element)
-      }
+      derStack.foreach(element => derCalculator = derCalculator.get.push(element))
       derCalculator
+    } else {
+      Try(RpnCalculator())
     }
-*/
-
-}
-
-/**
-  * Reverse Polish Notation Calculator.
-  *
-  * @param stack a datastructure holding all operations
-  */
-case class RpnCalculator(stack: List[Op] = Nil) {
 
   /**
-    * By pushing Op on the stack, the Op is potentially executed. If it is a Val, it the op instance is just put on the
-    * stack, if not then the stack is examined and the correct operation is performed.
+    * Reverse Polish Notation Calculator.
     *
-    * @param op
-    * @return
+    * @param stack a datastructure holding all operations
     */
+  case class RpnCalculator(stack: List[Op] = Nil) {
 
-  def push(op: Op): Try[RpnCalculator] = Try{
-    RpnCalculator(stack :+ op)}
-  /* {
+    /**
+      * By pushing Op on the stack, the Op is potentially executed. If it is a Val, it the op instance is just put on the
+      * stack, if not then the stack is examined and the correct operation is performed.
+      *
+      * @param op
+      * @return
+      */
+
+    def push(op: Op): Try[RpnCalculator] = op match {
+      case x: Val => Try(RpnCalculator(stack :+ x))
+      case y: BinOp => {
+        val fst = stack.peek()
+        def goThroughStack()
+      }
+
+    }
+
+
+    /*
+    if (stack.isEmpty) Try(RpnCalculator())
     if (op.equals(Val)) { //schauen ob op einem value gleicht
-      val newStack = stack :+ op // wenn ja, dann wird der vorhandene stack um op erweitert
-      Try(RpnCalculator(newStack)) //und der stack ausgeführt
+      //var newStack = stack :+ op // wenn ja, dann wird der vorhandene stack um op erweitert
+      Try(RpnCalculator(stack :+ op)) //und der stack ausgeführt
     }
-    else {
-      if (stack.isEmpty) true
-    }
+    else
+  */
 
+    /**
+      * Pushes val's on the stack.
+      *
+      * If op is not a val, pop two numbers from the stack and apply the operation.
+      *
+      * @param op
+      * @return
+      */
+    def push(op: Seq[Op]): Try[RpnCalculator] = ???
+
+
+    /**
+      * Returns an tuple of Op and a RevPolCal instance with the remainder of the stack.
+      *
+      * @return
+      */
+    def pop(): (Op, RpnCalculator) = (stack.head, RpnCalculator(stack.tail))
+
+    /**
+      * If stack is nonempty, returns the top of the stack. If it is empty, this function throws a NoSuchElementException.
+      *
+      * @return
+      */
+    def peek(): Op = if (stack.isEmpty) throw new NoSuchElementException else stack.head
+
+    /**
+      * returns the size of the stack.
+      *
+      * @return
+      */
+    def size: Int = stack.length
   }
-*/
-  /**
-    * Pushes val's on the stack.
-    *
-    * If op is not a val, pop two numbers from the stack and apply the operation.
-    *
-    * @param op
-    * @return
-    */
-  def push(op: Seq[Op]): Try[RpnCalculator] = Try{
-    for {o <- op} {println(o)}
-  }
 
-  /**
-    * Returns an tuple of Op and a RevPolCal instance with the remainder of the stack.
-    *
-    * @return
-    */
-  def pop(): (Op, RpnCalculator) = ???
-
-  /**
-    * If stack is nonempty, returns the top of the stack. If it is empty, this function throws a NoSuchElementException.
-    *
-    * @return
-    */
-  def peek(): Op = ???
-
-  /**
-    * returns the size of the stack.
-    *
-    * @return
-    */
-  def size: Int = stack.length
 }

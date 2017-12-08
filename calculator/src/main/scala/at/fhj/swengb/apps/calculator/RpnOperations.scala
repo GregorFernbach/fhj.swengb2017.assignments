@@ -1,5 +1,7 @@
 package at.fhj.swengb.apps.calculator
 
+import org.scalatest.exceptions.NotAllowedException
+
 /**
   * An operation which can be used with the RPN calculator.
   */
@@ -24,7 +26,6 @@ object Op {
   }
 
 }
-
 /**
   * A class representing a number which can be used in the RPN.
   *
@@ -48,10 +49,13 @@ case object Mul extends BinOp {
 
 /**
   * A case class representing division. Be aware that you have to think about the division through zero. In this case,
-  * a Val(Double.NaN) shoudl be returned.
+  * a Val(Double.NaN) should be returned.
   */
 case object Div extends BinOp {
-  override def eval(left: Val, right: Val): Val = ???
+  case class NotANumberException(private val message:String = "Some really crazy shit is going on here", private val cause: Throwable = None.orNull) extends Exception(message, cause)
+  override def eval(left: Val, right: Val): Val =
+    if ((left == 0) | (right == 0)) throw new NotANumberException()
+    else Val(left.value / right.value)
 }
 
 /**

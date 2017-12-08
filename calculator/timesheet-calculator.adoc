@@ -20,6 +20,10 @@
 | 2
 | fixed bugs
 
+| 07.12.17
+| 2.5
+| implementation of RpnCalculator
+
 
 
 |===
