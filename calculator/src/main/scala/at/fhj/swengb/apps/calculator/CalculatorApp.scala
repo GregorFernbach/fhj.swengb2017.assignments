@@ -9,8 +9,6 @@ import javafx.scene.control.TextField
 import javafx.scene.{Parent, Scene}
 import javafx.stage.Stage
 
-import at.fhj.swengb.apps.calculator.RpnCalculator.RpnCalculator
-
 import scala.util.{Failure, Success}
 import scala.util.control.NonFatal
 
@@ -60,6 +58,27 @@ class CalculatorFxController extends Initializable {
 
   @FXML var numberTextField : TextField = _
 
+  /*
+  //Output labels
+  @FXML private var lbl1: Label = _
+  @FXML private var lbl2: Label = _
+  @FXML private var lbl3: Label = _
+  @FXML private var taStack: TextArea = _
+
+  //Functionality Buttons
+  @FXML private var bttnComma: Button = _
+
+  //All math function buttons of calculator
+  @FXML var bttnMinus: Button = _
+  @FXML var bttnPlus: Button = _
+  @FXML var bttnMultiply: Button = _
+  @FXML var bttnDivide: Button = _
+
+  private var writeToLabel2: Boolean = false
+  private var replaceLabelText: Boolean = true
+  private var clearJustLabelContent = true
+  private var positiveNumber: Boolean = true; */
+
   override def initialize(location: URL, resources: ResourceBundle) = {
 
   }
@@ -67,7 +86,7 @@ class CalculatorFxController extends Initializable {
   def sgn(): Unit = {
     getCalculator().push(Op(numberTextField.getText)) match {
       case Success(c) => setCalculator(c)
-      case Failure(e) => // show warning / error
+      case Failure(e) => e.getMessage
     }
     getCalculator().stack foreach println
   }

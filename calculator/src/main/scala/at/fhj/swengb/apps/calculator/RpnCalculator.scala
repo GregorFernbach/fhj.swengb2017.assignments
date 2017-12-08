@@ -19,7 +19,7 @@ object RpnCalculator {
   def apply(s: String): Try[RpnCalculator] =
     if (!s.isEmpty) { // der Stack ist eine Liste aus Op
       val derStack: List[Op] = s.split(' ').map(elem => Op(elem)).toList
-       /*Splitte den String an den Leerzeichen => List[String], mappe darauf eine Funktion, die schaut
+      /*Splitte den String an den Leerzeichen => List[String], mappe darauf eine Funktion, die schaut
        ob das element ein Op ist und anschließend in eine Liste verwandelt
       */
       var derCalculator: Try[RpnCalculator] = Try(RpnCalculator())
@@ -28,7 +28,7 @@ object RpnCalculator {
     } else {
       Try(RpnCalculator())
     }
-
+}
   /**
     * Reverse Polish Notation Calculator.
     *
@@ -47,21 +47,24 @@ object RpnCalculator {
     def push(op: Op): Try[RpnCalculator] = op match {
       case x: Val => Try(RpnCalculator(stack :+ x))
       case y: BinOp => {
-        val fst = stack.peek()
-        def goThroughStack()
+        def valNexter3000(rpn: RpnCalculator): Val = {
+          val oG = rpn.peek()
+          oG match {
+            case x: Val => x
+            case _ => throw new NoSuchElementException
+          }
+        }
+
+        val fstElem = valNexter3000(this)
+        var rmnElem = pop()._2
+
+        val sndElem = valNexter3000(rmnElem)
+        rmnElem = rmnElem.pop()._2
+
+        val rslt = y.eval(fstElem, sndElem)
+        rmnElem.push(rslt)
       }
-
     }
-
-
-    /*
-    if (stack.isEmpty) Try(RpnCalculator())
-    if (op.equals(Val)) { //schauen ob op einem value gleicht
-      //var newStack = stack :+ op // wenn ja, dann wird der vorhandene stack um op erweitert
-      Try(RpnCalculator(stack :+ op)) //und der stack ausgeführt
-    }
-    else
-  */
 
     /**
       * Pushes val's on the stack.
@@ -71,7 +74,7 @@ object RpnCalculator {
       * @param op
       * @return
       */
-    def push(op: Seq[Op]): Try[RpnCalculator] = ???
+    def push(op: Seq[Op]): Try[RpnCalculator] = op.foldLeft(Try(RpnCalculator()))((acc, elem) => acc.get.push(elem))
 
 
     /**
@@ -86,7 +89,7 @@ object RpnCalculator {
       *
       * @return
       */
-    def peek(): Op = if (stack.isEmpty) throw new NoSuchElementException else stack.head
+    def peek(): Op = if (!stack.isEmpty) stack.head else throw new NoSuchElementException
 
     /**
       * returns the size of the stack.
@@ -95,5 +98,3 @@ object RpnCalculator {
       */
     def size: Int = stack.length
   }
-
-}

@@ -6,15 +6,14 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="at.fhj.swengb.apps.calculator.CalculatorApp">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="519.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1">
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="431.0" minWidth="10.0" prefWidth="424.0" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.20001220703125" minWidth="10.0" prefWidth="176.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="518.4000183105469" minWidth="10.0" prefWidth="518.4000183105469" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="168.19998168945312" minHeight="10.0" prefHeight="168.19998168945312" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="128.19998168945312" minHeight="10.0" prefHeight="63.20001831054688" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="167.8000030517578" minHeight="10.0" prefHeight="163.40000915527344" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="139.19998168945312" minHeight="10.0" prefHeight="97.99999542236327" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="133.0" minHeight="10.0" prefHeight="107.60000457763672" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="219.0" minHeight="10.0" prefHeight="193.80001831054688" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
       <GridPane GridPane.rowIndex="2">
@@ -22,57 +21,37 @@
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Button fx:id="bttn1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="1" GridPane.rowIndex="2" />
-            <Button fx:id="bttn2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button fx:id="bttn4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="4" GridPane.rowIndex="1" />
-            <Button fx:id="bttn7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="7" />
-            <Button fx:id="bttn8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="8" GridPane.columnIndex="1" />
-            <Button fx:id="bttn5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button fx:id="bttn3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="3" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Button fx:id="bttn6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button fx:id="bttn9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="9" GridPane.columnIndex="2" />
-         </children>
-      </GridPane>
-      <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Button fx:id="bttnPlus" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="+" GridPane.rowIndex="3" />
-            <Button fx:id="bttnMinus" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="-" GridPane.rowIndex="2" />
-            <Button fx:id="bttnMultiply" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="*" />
-            <Button fx:id="bttnDivide" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text=":" GridPane.rowIndex="1" />
-         </children>
-      </GridPane>
-      <GridPane GridPane.rowIndex="1">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="bttnZero" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="0" />
-            <Button fx:id="bttnChange" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Change" GridPane.columnIndex="1" />
-            <Button fx:id="bttnClear" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="C" GridPane.columnIndex="2" />
+            <Button id="one" fx:id="bttn1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="1" GridPane.rowIndex="2" />
+            <Button id="four" fx:id="bttn4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="4" GridPane.rowIndex="1" />
+            <Button id="seven" fx:id="bttn7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="7" />
+            <Button id="eight" fx:id="bttn8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="8" GridPane.columnIndex="1" />
+            <Button id="five" fx:id="bttn5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button id="two" fx:id="bttn2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button id="nine" fx:id="bttn9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="9" GridPane.columnIndex="2" />
+            <Button id="six" fx:id="bttn6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button id="three" fx:id="bttn3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="3" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Button id="enter" fx:id="bttnEnter" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="=" GridPane.columnIndex="3" />
+            <Button fx:id="bttn0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Button id="comma" fx:id="bttnComma" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="," GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Button id="clear" fx:id="bttnClear" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="C" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Button id="change" fx:id="bttnChange" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="AC" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Button id="divide" fx:id="bttnDivide" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="/" GridPane.columnIndex="4" />
+            <Button fx:id="bttnPlus" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="+" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <Button id="minus" fx:id="bttnMinus" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="-" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <Button id="multiply" fx:id="bttnMultiply" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="*" GridPane.columnIndex="5" />
          </children>
       </GridPane>
-      <Button fx:id="bttnEnter" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="=" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Label" />
+      <Label text="Label" />
+      <Label text="Label" GridPane.rowIndex="1" />
    </children>
 </GridPane>
