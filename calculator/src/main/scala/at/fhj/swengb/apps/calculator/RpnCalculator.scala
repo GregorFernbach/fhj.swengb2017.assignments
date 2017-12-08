@@ -14,17 +14,18 @@ object RpnCalculator {
     * @param s a string representing a calculation, for example '1 2 +'
     * @return
     */
-  def apply(s: String): Try[RpnCalculator] = {
+  def apply(s: String): Try[RpnCalculator] = ??? /*{
 
     if (s.isEmpty) //wenn der string leer is, hau einen leeren Stack zurück
       Try(RpnCalculator())
 
     else { // der Stack ist eine Liste aus Op
-      def derCalculator(a:List[Op]) = a.map(e => Try(RpnCalculator(RpnCalculator.push(e))))
+
+      //def derCalculator(a:List[Op]) = a.map(e => Try(RpnCalculator(RpnCalculator.push(e))))
 
       val derStack: List[Op] = s.split(' ').map(elem => Op(elem)).toList
 
-      def derCalc = derStack.map(derCalculator)
+      //def derCalc = derStack.map(b =>derCalculator)
 /*
  Splitte den String an den Leerzeichen => List[String], mappe darauf eine Funktion, die schaut
  ob das element ein Op ist und anschließend in eine Liste verwandelt
@@ -36,7 +37,9 @@ object RpnCalculator {
       }
       derCalculator
     }
-  }
+*/
+
+}
 
 /**
   * Reverse Polish Notation Calculator.
@@ -52,17 +55,20 @@ case class RpnCalculator(stack: List[Op] = Nil) {
     * @param op
     * @return
     */
-  def push(op: Op): Try[RpnCalculator] = {
+
+  def push(op: Op): Try[RpnCalculator] = Try{
+    RpnCalculator(stack :+ op)}
+  /* {
     if (op.equals(Val)) { //schauen ob op einem value gleicht
       val newStack = stack :+ op // wenn ja, dann wird der vorhandene stack um op erweitert
       Try(RpnCalculator(newStack)) //und der stack ausgeführt
     }
     else {
-      if (stack.isEmpty)
+      if (stack.isEmpty) true
     }
 
   }
-
+*/
   /**
     * Pushes val's on the stack.
     *
@@ -71,7 +77,9 @@ case class RpnCalculator(stack: List[Op] = Nil) {
     * @param op
     * @return
     */
-  def push(op: Seq[Op]): Try[RpnCalculator] = ???
+  def push(op: Seq[Op]): Try[RpnCalculator] = Try{
+    for {o <- op} {println(o)}
+  }
 
   /**
     * Returns an tuple of Op and a RevPolCal instance with the remainder of the stack.
@@ -92,5 +100,5 @@ case class RpnCalculator(stack: List[Op] = Nil) {
     *
     * @return
     */
-  def size: Int = ???
+  def size: Int = stack.length
 }
