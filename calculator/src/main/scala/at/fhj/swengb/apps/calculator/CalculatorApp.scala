@@ -9,6 +9,8 @@ import javafx.scene.control.TextField
 import javafx.scene.{Parent, Scene}
 import javafx.stage.Stage
 
+import at.fhj.swengb.apps.calculator.RpnCalculator.RpnCalculator
+
 import scala.util.{Failure, Success}
 import scala.util.control.NonFatal
 

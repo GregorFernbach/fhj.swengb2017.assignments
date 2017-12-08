@@ -18,11 +18,8 @@ object RpnCalculator {
     */
   def apply(s: String): Try[RpnCalculator] =
     if (!s.isEmpty) { // der Stack ist eine Liste aus Op
-      //def derCalculator(a:List[Op]) = a.map(e => Try(RpnCalculator(RpnCalculator.push(e))))
       val derStack: List[Op] = s.split(' ').map(elem => Op(elem)).toList
-      //def derCalc = derStack.map(b =>derCalculator)
-      /*
-       Splitte den String an den Leerzeichen => List[String], mappe darauf eine Funktion, die schaut
+       /*Splitte den String an den Leerzeichen => List[String], mappe darauf eine Funktion, die schaut
        ob das element ein Op ist und anschließend in eine Liste verwandelt
       */
       var derCalculator: Try[RpnCalculator] = Try(RpnCalculator())
