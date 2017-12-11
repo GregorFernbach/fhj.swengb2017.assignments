@@ -2,7 +2,7 @@ package at.fhj.swengb.apps.calculator
 
 import org.scalatest.WordSpecLike
 
-import scala.util.{Failure, Success, Try}
+import scala.util.{Failure, Success}
 
 /**
   * A specification for a reverse polish notation calculator.
@@ -96,24 +96,29 @@ class RpnCalculatorSpec extends WordSpecLike {
     }
 
     "RevPolCal('*')" in {
-      RpnCalculator("*") match {
-        case Failure(e: NoSuchElementException) =>
-        case _ => fail()
+      intercept[NoSuchElementException] {
+        RpnCalculator("*") match {
+          case Failure(e: NoSuchElementException) =>
+          case _ => fail()
+        }
       }
     }
     "RevPolCal('* 4')" in {
-      RpnCalculator("* 4") match {
-        case Failure(e: NoSuchElementException) =>
-        case _ => fail()
+      intercept[NoSuchElementException] {
+        RpnCalculator("* 4") match {
+          case Failure(e: NoSuchElementException) =>
+          case _ => fail()
+        }
       }
     }
     "RevPolCal('3 *')" in {
-      RpnCalculator("3 *") match {
-        case Failure(e: NoSuchElementException) =>
-        case _ => fail()
+      intercept[NoSuchElementException] {
+        RpnCalculator("3 *") match {
+          case Failure(e: NoSuchElementException) =>
+          case _ => fail()
+        }
       }
     }
-
   }
 
 }
