@@ -9,37 +9,100 @@
 	-fx-background-color:#ff00ff;
 }
 
+/* LABELS */
 
+Label {
+    -fx-text-fill: #660000;
+    -fx-font-size: 30;
 
-/* BUTTONS:
-#bttn0{}
+}
 
-#bttn1{-fx-background-color:#00ff00;}
+#lbl1 {
+    -fx-background-color: #996633;
+}
 
-#bttn2{
-    fx-background-color:: #228b22;}
+#lbl2 {
+    -fx-background-color: #996633;
+}
 
-#bttn3{}
+/* BUTTONS */
 
-#bttn4{}
+Button {
+    -fx-border-color: #477887;
+}
 
-#bttn5{}
+Button:hover {
+    -fx-border-color: #ffb732;
+}
 
-#bttn6{}
+#bttn0 {
+    -fx-background-color: #339933;
+}
 
-#bttn7{}
+#bttn1 {
+    -fx-background-color: #339933;
+}
 
-#bttn8{}
+#bttn2 {
+    -fx-background-color: #339933;
+}
 
-#bttn9{}
+#bttn3 {
+    -fx-background-color: #339933;
+}
 
-#bttnMinus{}
+#bttn4 {
+    -fx-background-color: #339933;
+}
 
-#bttnPlus{}
+#bttn5 {
+    -fx-background-color: #339933;
+}
 
-#bttnDivide{}
+#bttn6 {
+    -fx-background-color: #339933;
+}
 
-#bttnMultiply{}
+#bttn7 {
+    -fx-background-color: #339933;
+}
 
-Button{fx-background-color:#228b22;}
-*/
+#bttn8 {
+    -fx-background-color: #339933;
+}
+
+#bttn9 {
+    -fx-background-color: #339933;
+}
+
+#bttnPlus {
+    -fx-background-color: #0099CC;
+}
+
+#bttnMinus {
+    -fx-background-color: #0099CC;
+}
+
+#bttnDivide {
+    -fx-background-color: #0099CC;
+}
+
+#bttnMultiply {
+    -fx-background-color: #0099CC;
+}
+
+#bttnEnter {
+    -fx-background-color: #0099CC;
+}
+
+#bttnClear {
+    -fx-background-color: #0099CC;
+}
+
+#bttnComma {
+    -fx-background-color: #0099CC;
+}
+
+#bttnNegative {
+    -fx-background-color: #0099CC;
+}

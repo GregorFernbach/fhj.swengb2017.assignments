@@ -16,6 +16,12 @@
 | 7.5
 | implementation of RpnCalculator, GUI
 
+| 09.12.2017
+| 6
+| implementation of RpnCalculator, CalculatorApp, GUI
 
+| 11.12.2017
+| 5
+| GUI, talk about implementation with Qerimi & Fernbach
 
 |===

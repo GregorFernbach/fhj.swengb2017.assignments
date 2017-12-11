@@ -38,53 +38,50 @@
                 <Button fx:id="bttn4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
                         mnemonicParsing="false" onAction="#txt5000" text="4" GridPane.rowIndex="1"/>
                 <Button fx:id="bttn7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
-                        mnemonicParsing="false" onAction="#txt5000" text="7"/>
-                <Button id="eight" fx:id="bttn8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                        mnemonicParsing="false" onAction="#txt5000" text="7" textAlignment="CENTER"/>
+                <Button fx:id="bttn8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
                         mnemonicParsing="false" onAction="#txt5000" text="8" GridPane.columnIndex="1"/>
-                <Button id="five" fx:id="bttn5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                <Button fx:id="bttn5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
                         mnemonicParsing="false" onAction="#txt5000" text="5" GridPane.columnIndex="1"
                         GridPane.rowIndex="1"/>
-                <Button id="two" fx:id="bttn2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                <Button fx:id="bttn2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
                         mnemonicParsing="false" onAction="#txt5000" text="2" GridPane.columnIndex="1"
                         GridPane.rowIndex="2"/>
-                <Button id="nine" fx:id="bttn9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                <Button fx:id="bttn9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
                         mnemonicParsing="false" onAction="#txt5000" text="9" GridPane.columnIndex="2"/>
-                <Button id="six" fx:id="bttn6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                <Button fx:id="bttn6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
                         mnemonicParsing="false" onAction="#txt5000" text="6" GridPane.columnIndex="2"
                         GridPane.rowIndex="1"/>
-                <Button id="three" fx:id="bttn3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                <Button fx:id="bttn3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
                         mnemonicParsing="false" onAction="#txt5000" text="3" GridPane.columnIndex="2"
                         GridPane.rowIndex="2"/>
-                <Button id="enter" fx:id="bttnEnter" maxHeight="1.7976931348623157E308"
-                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#txt5000" text="="
-                        GridPane.columnIndex="3"/>
+                <Button fx:id="bttnEnter" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                        mnemonicParsing="false" onAction="#txt5000" text="=" GridPane.columnIndex="3"/>
                 <Button fx:id="bttn0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
                         mnemonicParsing="false" onAction="#txt5000" text="0" GridPane.columnIndex="3"
                         GridPane.rowIndex="2"/>
-                <Button id="comma" fx:id="bttnComma" maxHeight="1.7976931348623157E308"
-                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#txt5000" text=","
-                        GridPane.columnIndex="3" GridPane.rowIndex="1"/>
-                <Button id="clear" fx:id="bttnClear" maxHeight="1.7976931348623157E308"
-                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#txt5000" text="C"
-                        GridPane.columnIndex="4" GridPane.rowIndex="2"/>
-                <Button id="change" fx:id="bttnNegative" maxHeight="1.7976931348623157E308"
-                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#txt5000" text="-x"
-                        GridPane.columnIndex="4" GridPane.rowIndex="1"/>
-                <Button id="divide" fx:id="bttnDivide" maxHeight="1.7976931348623157E308"
-                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#txt5000" text="/"
-                        GridPane.columnIndex="4"/>
-                <Button id="plus" fx:id="bttnPlus" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                <Button fx:id="bttnComma" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                        mnemonicParsing="false" onAction="#txt5000" text="." GridPane.columnIndex="3"
+                        GridPane.rowIndex="1"/>
+                <Button fx:id="bttnClear" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                        mnemonicParsing="false" onAction="#txt5000" text="C" GridPane.columnIndex="4"
+                        GridPane.rowIndex="2"/>
+                <Button fx:id="bttnNegative" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                        mnemonicParsing="false" onAction="#txt5000" text="-x" GridPane.columnIndex="4"
+                        GridPane.rowIndex="1"/>
+                <Button fx:id="bttnDivide" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                        mnemonicParsing="false" onAction="#txt5000" text="/" GridPane.columnIndex="4"/>
+                <Button fx:id="bttnPlus" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
                         mnemonicParsing="false" onAction="#txt5000" text="+" GridPane.columnIndex="5"
                         GridPane.rowIndex="2"/>
-                <Button id="minus" fx:id="bttnMinus" maxHeight="1.7976931348623157E308"
-                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#txt5000" text="-"
-                        GridPane.columnIndex="5" GridPane.rowIndex="1"/>
-                <Button id="multiply" fx:id="bttnMultiply" maxHeight="1.7976931348623157E308"
-                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#txt5000" text="*"
-                        GridPane.columnIndex="5"/>
+                <Button fx:id="bttnMinus" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                        mnemonicParsing="false" onAction="#txt5000" text="-" GridPane.columnIndex="5"
+                        GridPane.rowIndex="1"/>
+                <Button fx:id="bttnMultiply" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                        mnemonicParsing="false" onAction="#txt5000" text="*" GridPane.columnIndex="5"/>
             </children>
         </GridPane>
-        <Label fx:id="lbl2" text="Label"/>
-        <Label fx:id="lbl1" text="Label" GridPane.rowIndex="1"/>
+        <Label fx:id="lbl2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"/>
+        <Label fx:id="lbl1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.rowIndex="1"/>
     </children>
 </GridPane>
